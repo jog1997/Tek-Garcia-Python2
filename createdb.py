@@ -1,4 +1,5 @@
 ##Database creation for MySQL
+##commented out since it only has to run once
 
 '''import pymysql
 

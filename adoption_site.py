@@ -1,4 +1,5 @@
 #adoption_site.py
+##Here are the app routes for the website
 
 import os
 from Forms import AddForm, DelForm, AddOwnerForm
@@ -9,19 +10,7 @@ from models import db, app, Puppy, Toy, Owner
 
 
 
-'''app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'mysecretkey'
-basedir = os.path.abspath(os.path.dirname(__file__))
-# __file__ --> /TekSysProject/venv/SQL.py
-
-####SQL Database section
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db = SQLAlchemy(app)
-
-Migrate(app,db)'''
 
 ##### MODELS on models.py file
 
