@@ -29,7 +29,7 @@ def add_owner():
         name = form.name.data
         puppy_id = form.puppy_id.data
 
-        new_owner = Owner(name,puppy_id)
+        new_owner = Owner(name, puppy_id)
         db.session.add(new_owner)
         db.session.commit
 
@@ -71,10 +71,10 @@ def del_pup():
     form = DelForm()
 
     if form.validate_on_submit():
-
         id = form.id.data
         puppy = Puppy.query.get(id)
         db.session.delete(puppy)
+        db.session.commit()
 
         return redirect(url_for('list_pup'))
     return render_template('delete.html', form = form)
