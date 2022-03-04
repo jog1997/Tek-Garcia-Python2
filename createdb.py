@@ -1,7 +1,8 @@
 ##Database creation for MySQL
 ##commented out since it only has to run once
-
-'''import pymysql
+import sqlalchemy
+import pymysql
+'''
 
 mydb = pymysql.connect(
     host='localhost',
@@ -18,4 +19,5 @@ my_cursor.execute('SHOW DATABASES')
 for db in my_cursor:
     print(db)
 '''
+
 

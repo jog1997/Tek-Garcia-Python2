@@ -1,21 +1,21 @@
-##Page for statistical exploration
+##Page for adding csv to MySQL and statistical exploration
 import pandas as pd
 import sqlalchemy
 
-##Bring back connection to Mysql
+##Bring back connection to Mysql and connect CSVs to mysql
 con=sqlalchemy.create_engine('mysql+pymysql://root:4242@localhost/Puppy')
 
-## Import both databases using mysql and pandas
-df_puppy=pd.read_sql('puppies',con)
-df_owner=pd.read_sql('owner',con)
-print('This is the puppy table.\n', df_puppy)
-print('This is the owner table.\n', df_owner)
-print('\n')
-'''I exported the CSV from MySQL query and stored in the same directory 
-(This was mainly for my use to explore data statistics prior Mysql connection
-df_puppy = pd.read_csv('Puppy_table.csv')
-df_owner = pd.read_csv('Owner_table.csv')
-print(df_owner)'''
+#I commented out the connection to mysql to prevent additional information from being added
+df_puppy = pd.read_csv('Puppy_table.csv', index_col = False, delimiter =',')
+#df_puppy.to_sql('puppies', con, schema = 'puppy', if_exists='append', index = False)
+
+df_owner = pd.read_csv('Owner_table.csv', index_col = False, delimiter =',')
+#df_owner.to_sql('owner', con, schema = 'puppy', if_exists='append', index = False)
+
+
+
+
+
 
 
 ##Statistics for Puppy Table
